@@ -1,29 +1,22 @@
 const testimonials = [
   { quote: "Economizo quase 2 horas por dia", author: "Dr. Felipe Andrade", specialty: "Clínico geral" },
   { quote: "Não consigo mais trabalhar sem", author: "Dra. Marina Costa", specialty: "Cardiologista" },
-  { quote: "Muito precisa na estruturação clínica", author: "Dr. Ricardo Lemos", specialty: "Neurologista" },
-  { quote: "Otimizou meu tempo de forma significativa", author: "Dra. Camila Barros", specialty: "Endocrinologista" },
-  { quote: "Tão essencial quanto meu estetoscópio", author: "Dr. Bruno Tavares", specialty: "Gastroenterologista" },
-  { quote: "A qualidade da documentação melhorou muito", author: "Dra. Ana Ribeiro", specialty: "Dermatologista" },
+  { quote: "Muito precisa na estruturação", author: "Dr. Ricardo Lemos", specialty: "Neurologista" },
+  { quote: "Otimizou muito meu tempo", author: "Dra. Camila Barros", specialty: "Endocrinologista" },
+  { quote: "Essencial quanto meu estetoscópio", author: "Dr. Bruno Tavares", specialty: "Gastroenterologista" },
+  { quote: "A qualidade da documentação melhorou", author: "Dra. Ana Ribeiro", specialty: "Dermatologista" },
 ];
 
 const doubled = [...testimonials, ...testimonials];
 
 const TestimonialMarquee = () => (
-  <section className="py-10 border-y border-border bg-surface overflow-hidden">
-    <div className="flex animate-marquee">
+  <section className="py-4 border-y border-border overflow-hidden bg-surface">
+    <div className="flex animate-marquee whitespace-nowrap">
       {doubled.map((t, i) => (
-        <div
-          key={i}
-          className="flex-shrink-0 flex items-center gap-6 px-8"
-        >
-          <p className="text-[14px] font-semibold text-foreground whitespace-nowrap">
-            "{t.quote}"
-          </p>
-          <span className="text-[12px] text-muted-foreground whitespace-nowrap">
-            {t.author}, {t.specialty}
-          </span>
-          <span className="text-border">•</span>
+        <div key={i} className="inline-flex items-center gap-3 px-8 shrink-0">
+          <span className="text-sm font-semibold text-foreground">"{t.quote}"</span>
+          <span className="text-xs text-muted-foreground">{t.author}, {t.specialty}</span>
+          <span className="text-border ml-3">·</span>
         </div>
       ))}
     </div>
