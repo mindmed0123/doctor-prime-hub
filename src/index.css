@@ -2,30 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 14% 10%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 10%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 10%;
+    --popover-foreground: 220 20% 10%;
 
     --primary: 220 72% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 14% 96%;
-    --secondary-foreground: 220 14% 30%;
+    --secondary-foreground: 220 20% 25%;
 
-    --muted: 220 10% 96%;
+    --muted: 220 14% 96%;
     --muted-foreground: 220 8% 46%;
 
     --accent: 220 14% 96%;
-    --accent-foreground: 220 14% 10%;
+    --accent-foreground: 220 20% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -34,7 +34,10 @@
     --input: 220 13% 91%;
     --ring: 220 72% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    --surface: 225 25% 97%;
+    --success: 152 55% 41%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -44,13 +47,6 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Custom tokens */
-    --surface: 220 20% 98%;
-    --surface-foreground: 220 14% 10%;
-    --subtle: 220 8% 52%;
-    --success: 152 55% 41%;
-    --success-foreground: 0 0% 100%;
   }
 }
 
@@ -68,6 +64,5 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: -0.011em;
   }
 }
