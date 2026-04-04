@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import FadeIn from "./FadeIn";
 
-const features = [
+const perks = [
   "Consultas ilimitadas em número e duração",
   "Criação ilimitada de modelos personalizados",
   "Estruturação clínica automática",
@@ -9,54 +9,67 @@ const features = [
 ];
 
 const PricingSection = () => (
-  <section id="planos" className="py-24 md:py-32">
-    <div className="container mx-auto max-w-lg">
+  <section id="planos" className="py-24 md:py-32 bg-surface">
+    <div className="container mx-auto max-w-xl">
       <FadeIn>
-        <div className="text-center mb-12">
-          <p className="text-[12px] font-semibold uppercase tracking-widest text-primary mb-3">
+        <div className="text-center mb-6">
+          <span className="inline-flex items-center rounded-full bg-primary-light text-primary text-xs font-semibold px-4 py-1.5 uppercase tracking-wider">
             Planos
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Comece a usar hoje
-          </h2>
+          </span>
         </div>
+        <h2 className="font-mono text-3xl md:text-[2.5rem] font-bold tracking-tight text-foreground text-center leading-tight">
+          Quanto custa otimizar{" "}
+          <span className="text-primary">sua prática clínica?</span>
+        </h2>
+        <p className="mt-4 text-center text-sm text-muted-foreground">
+          Utilize o plano PRO gratuitamente por 7 dias
+        </p>
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <div className="rounded-2xl border border-border bg-background p-8 md:p-10 shadow-lg shadow-foreground/[0.03]">
-          <p className="text-[12px] font-semibold uppercase tracking-widest text-primary mb-1">
-            MindMed Pro
-          </p>
-          <p className="text-sm text-muted-foreground mb-6">
-            Desbloqueie todo o potencial com consultas ilimitadas e recursos exclusivos.
-          </p>
-
-          <div className="flex items-baseline gap-2 mb-1">
-            <span className="text-4xl font-bold text-foreground">R$99</span>
-            <span className="text-muted-foreground text-sm">/mês</span>
+        <div className="mt-10 rounded-2xl border-2 border-primary/20 bg-background p-8 md:p-10 shadow-xl shadow-primary/5">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h3 className="text-lg font-bold text-foreground">MindMed Pro</h3>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                Desbloqueie todo o potencial
+              </p>
+            </div>
+            <span className="inline-flex items-center rounded-full bg-primary-light text-primary text-xs font-semibold px-3 py-1">
+              Popular
+            </span>
           </div>
-          <p className="text-[12px] text-muted-foreground mb-8">
-            Sem fidelidade. Cancele quando quiser.
-          </p>
+
+          <div className="mb-6">
+            <div className="flex items-baseline gap-1">
+              <span className="text-sm text-muted-foreground line-through">R$ 199</span>
+            </div>
+            <div className="flex items-baseline gap-1 mt-1">
+              <span className="text-5xl font-bold text-foreground">R$ 99</span>
+              <span className="text-muted-foreground text-base">/mês</span>
+            </div>
+            <p className="text-xs text-muted-foreground mt-1">(durante o lançamento)</p>
+          </div>
+
+          <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-3">Veja as vantagens:</p>
 
           <ul className="space-y-3 mb-8">
-            {features.map((f) => (
-              <li key={f} className="flex items-center gap-3 text-[14px] text-foreground">
-                <Check className="h-4 w-4 text-primary shrink-0" />
-                {f}
+            {perks.map((p) => (
+              <li key={p} className="flex items-center gap-3 text-sm text-foreground">
+                <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <Check className="h-3 w-3 text-primary" />
+                </div>
+                {p}
               </li>
             ))}
           </ul>
 
-          <a
-            href="#"
-            className="flex items-center justify-center w-full text-[15px] font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-xl py-3.5 transition-colors"
-          >
+          <a href="#" className="flex items-center justify-center w-full text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full py-3.5 transition-colors shadow-lg shadow-primary/20">
             Iniciar teste gratuito
           </a>
 
-          <p className="mt-3 text-center text-[11px] text-muted-foreground">
-            Teste grátis por 7 dias · Sem cartão de crédito
+          <p className="mt-3 text-center text-xs text-muted-foreground">
+            Sem fidelidade · Cancele quando quiser
           </p>
         </div>
       </FadeIn>

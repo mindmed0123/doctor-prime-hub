@@ -1,53 +1,44 @@
-import { Shield, Lock, UserCheck, Trash2 } from "lucide-react";
+import { Shield, Trash2, Lock, UserCheck } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const items = [
-  {
-    icon: Trash2,
-    title: "Áudios descartados automaticamente",
-    desc: "Nenhum registro de voz fica armazenado.",
-  },
-  {
-    icon: Shield,
-    title: "Conformidade com a LGPD",
-    desc: "Dados anonimizados e protegidos por padrão.",
-  },
-  {
-    icon: Lock,
-    title: "Dados não transitam fora da plataforma",
-    desc: "Informações clínicas permanecem em ambiente seguro e exclusivo.",
-  },
-  {
-    icon: UserCheck,
-    title: "Revisão médica obrigatória",
-    desc: "O profissional sempre tem a palavra final.",
-  },
+  { icon: Trash2, title: "Descartamos áudios automaticamente", desc: "Nenhum registro de voz fica armazenado." },
+  { icon: Shield, title: "Anonimizamos os dados", desc: "Em conformidade total com a LGPD." },
+  { icon: Lock, title: "Mantemos tudo dentro da MindMed", desc: "Os dados clínicos não transitam em outras aplicações." },
+  { icon: UserCheck, title: "Uso simplificado e seguro", desc: "Revisão sempre pelo médico. Sem substituição de decisão clínica." },
 ];
 
 const SecuritySection = () => (
   <section id="seguranca" className="py-24 md:py-32">
-    <div className="container mx-auto max-w-4xl">
-      <FadeIn>
-        <div className="text-center mb-16">
-          <p className="text-[12px] font-semibold uppercase tracking-widest text-primary mb-3">
-            Segurança
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            Segurança de dados em padrão clínico
-          </h2>
-        </div>
-      </FadeIn>
+    <div className="container mx-auto">
+      <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+        <FadeIn>
+          <div className="md:sticky md:top-28">
+            <span className="inline-flex items-center rounded-full bg-primary-light text-primary text-xs font-semibold px-4 py-1.5 uppercase tracking-wider mb-6">
+              Segurança
+            </span>
+            <h2 className="font-mono text-3xl md:text-[2.5rem] font-bold tracking-tight text-foreground leading-tight">
+              Segurança de dados{" "}
+              <span className="text-primary">em padrão clínico</span>
+            </h2>
+          </div>
+        </FadeIn>
 
-      <div className="grid sm:grid-cols-2 gap-5">
-        {items.map((item, i) => (
-          <FadeIn key={item.title} delay={i * 0.08}>
-            <div className="rounded-xl border border-border p-6 h-full">
-              <item.icon className="h-5 w-5 text-primary mb-4" />
-              <h3 className="text-[15px] font-semibold text-foreground">{item.title}</h3>
-              <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed">{item.desc}</p>
-            </div>
-          </FadeIn>
-        ))}
+        <div className="space-y-6">
+          {items.map((item, i) => (
+            <FadeIn key={item.title} delay={i * 0.08}>
+              <div className="flex gap-5">
+                <div className="mt-1 h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <item.icon className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-[15px] font-bold text-foreground">{item.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </div>
   </section>
