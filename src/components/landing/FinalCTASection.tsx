@@ -1,21 +1,21 @@
-import { ArrowRight } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const FinalCTASection = () => (
-  <section id="cta-final" className="py-24 md:py-32">
-    <div className="container mx-auto px-6 max-w-md text-center">
+  <section className="py-20 md:py-28">
+    <div className="container mx-auto">
       <FadeIn>
-        <h2 className="text-3xl md:text-[2.2rem] font-semibold tracking-tight text-foreground">
-          Comece a usar a MindMed.
-        </h2>
-
-        <div className="mt-8">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-[15px] font-medium text-primary-foreground bg-foreground hover:bg-foreground/90 rounded-lg px-8 py-3.5 transition-colors"
-          >
-            Criar conta <ArrowRight className="h-4 w-4" />
-          </a>
+        <div className="rounded-2xl bg-foreground px-8 py-16 md:py-20 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-primary-foreground max-w-md mx-auto leading-tight">
+            Pronto para transformar minutos digitados em minutos de cuidado?
+          </h2>
+          <div className="mt-8">
+            <a
+              href="#planos"
+              className="inline-flex items-center text-[15px] font-medium text-foreground bg-background hover:bg-background/90 rounded-xl px-7 py-3.5 transition-colors"
+            >
+              Iniciar teste gratuito
+            </a>
+          </div>
         </div>
       </FadeIn>
     </div>
