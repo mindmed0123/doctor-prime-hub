@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -11,43 +11,50 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const links = [
+    ["Funcionalidades", "#funcionalidades"],
+    ["Benefícios", "#beneficios"],
+    ["Segurança", "#seguranca"],
+    ["Planos", "#planos"],
+  ];
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-[0_1px_3px_0_rgb(0_0_0/0.04)]"
+          ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-[0_1px_2px_0_rgb(0_0_0/0.03)]"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between h-14 px-6">
-        <a href="#" className="text-base font-semibold tracking-tight text-foreground">
+      <div className="container mx-auto flex items-center justify-between h-[60px]">
+        <a href="#" className="text-[15px] font-bold tracking-tight text-foreground">
           MindMed
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          {[
-            ["Produto", "#produto"],
-            ["Segurança", "#seguranca"],
-          ].map(([label, href]) => (
+        <div className="hidden md:flex items-center gap-7">
+          {links.map(([label, href]) => (
             <a
               key={label}
               href={href}
-              className="text-[13px] text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {label}
             </a>
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
-          <a href="#" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="#"
+            className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-2"
+          >
             Entrar
           </a>
           <a
-            href="#cta-final"
-            className="inline-flex items-center gap-1.5 text-[13px] font-medium text-primary-foreground bg-foreground hover:bg-foreground/90 rounded-lg px-4 py-2 transition-colors"
+            href="#planos"
+            className="text-[13px] font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-lg px-4 py-2 transition-colors"
           >
-            Começar <ArrowRight className="h-3.5 w-3.5" />
+            Iniciar teste gratuito
           </a>
         </div>
 
@@ -57,11 +64,8 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background border-t border-border px-6 pb-5 pt-2 space-y-1">
-          {[
-            ["Produto", "#produto"],
-            ["Segurança", "#seguranca"],
-          ].map(([label, href]) => (
+        <div className="md:hidden bg-background border-t border-border px-6 pb-5 pt-3 space-y-1">
+          {links.map(([label, href]) => (
             <a
               key={label}
               href={href}
@@ -72,11 +76,11 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#cta-final"
+            href="#planos"
             onClick={() => setMobileOpen(false)}
-            className="block mt-3 text-center text-sm font-medium text-primary-foreground bg-foreground rounded-lg px-4 py-2.5"
+            className="block mt-3 text-center text-sm font-medium text-primary-foreground bg-primary rounded-lg px-4 py-2.5 transition-colors"
           >
-            Começar →
+            Iniciar teste gratuito
           </a>
         </div>
       )}

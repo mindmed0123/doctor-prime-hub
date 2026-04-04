@@ -1,12 +1,10 @@
-import { ArrowRight } from "lucide-react";
-
 const MobileCTA = () => (
-  <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden px-4 pb-4 pt-2">
+  <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden px-4 pb-4 pt-2 pointer-events-none">
     <a
-      href="#cta-final"
-      className="flex items-center justify-center gap-2 w-full text-sm font-medium text-primary-foreground bg-foreground rounded-lg py-3 shadow-[0_4px_20px_rgb(0_0_0/0.15)]"
+      href="#planos"
+      className="pointer-events-auto flex items-center justify-center w-full text-[14px] font-medium text-primary-foreground bg-primary rounded-xl py-3.5 shadow-lg shadow-primary/25"
     >
-      Começar <ArrowRight className="h-3.5 w-3.5" />
+      Iniciar teste gratuito
     </a>
   </div>
 );
