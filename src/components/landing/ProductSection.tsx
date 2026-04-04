@@ -1,41 +1,56 @@
-import { Brain, LayoutList, Stethoscope, FileCheck } from "lucide-react";
-import AnimatedSection from "./AnimatedSection";
+import FadeIn from "./FadeIn";
+import featureCapture from "@/assets/feature-capture.jpg";
+import featureStructure from "@/assets/feature-structure.jpg";
+import featureReady from "@/assets/feature-ready.jpg";
 
 const features = [
-  { icon: Brain, text: "Entende o contexto clínico" },
-  { icon: LayoutList, text: "Organiza a consulta" },
-  { icon: Stethoscope, text: "Estrutura o raciocínio médico" },
-  { icon: FileCheck, text: "Entrega um documento pronto" },
+  {
+    title: "Captura inteligente",
+    desc: "A consulta é transformada em texto estruturado automaticamente.",
+    img: featureCapture,
+  },
+  {
+    title: "Estrutura clínica",
+    desc: "Organização em anamnese, hipóteses, condutas e exames.",
+    img: featureStructure,
+  },
+  {
+    title: "Pronto para uso",
+    desc: "Documento final já estruturado e editável.",
+    img: featureReady,
+  },
 ];
 
 const ProductSection = () => (
-  <section id="produto" className="section-padding surface-sunken">
-    <div className="container mx-auto max-w-5xl">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <AnimatedSection>
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              A MindMed não transcreve.{" "}
-              <span className="text-gradient">Ela constrói o seu prontuário.</span>
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Enquanto outras ferramentas apenas escrevem o que você fala… a MindMed vai além:
-            </p>
-          </div>
-        </AnimatedSection>
-
-        <div className="grid grid-cols-2 gap-4">
-          {features.map((f, i) => (
-            <AnimatedSection key={f.text} delay={i * 0.1}>
-              <div className="p-5 rounded-xl surface-elevated border border-border/50 shadow-sm space-y-3 h-full">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                  <f.icon className="h-5 w-5" />
-                </div>
-                <p className="text-sm font-semibold text-foreground">{f.text}</p>
-              </div>
-            </AnimatedSection>
-          ))}
+  <section id="produto" className="py-24 md:py-32">
+    <div className="container mx-auto px-6">
+      <FadeIn>
+        <div className="max-w-md">
+          <h2 className="text-3xl md:text-[2.2rem] font-semibold tracking-tight text-foreground leading-tight">
+            Projetado para a prática clínica real.
+          </h2>
         </div>
+      </FadeIn>
+
+      <div className="mt-14 grid md:grid-cols-3 gap-6">
+        {features.map((f, i) => (
+          <FadeIn key={f.title} delay={i * 0.1}>
+            <div className="group rounded-xl border border-border bg-background overflow-hidden hover:shadow-[0_8px_30px_rgb(0_0_0/0.04)] transition-shadow duration-300">
+              <div className="aspect-[4/3] overflow-hidden bg-surface">
+                <img
+                  src={f.img}
+                  alt={f.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-base font-semibold text-foreground">{f.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+              </div>
+            </div>
+          </FadeIn>
+        ))}
       </div>
     </div>
   </section>

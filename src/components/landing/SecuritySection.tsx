@@ -1,37 +1,32 @@
-import { Shield, Lock, UserCheck, AlertCircle } from "lucide-react";
-import AnimatedSection from "./AnimatedSection";
+import { Shield, Lock, UserCheck, Server } from "lucide-react";
+import FadeIn from "./FadeIn";
 
 const items = [
-  { icon: Shield, title: "LGPD compliant", desc: "Totalmente em conformidade com a legislação brasileira" },
-  { icon: Lock, title: "Dados protegidos", desc: "Criptografia de ponta a ponta" },
-  { icon: UserCheck, title: "Revisão pelo médico", desc: "O profissional sempre tem a palavra final" },
-  { icon: AlertCircle, title: "Não substitui decisão clínica", desc: "Ferramenta de apoio, não de substituição" },
+  { icon: Shield, label: "LGPD" },
+  { icon: Lock, label: "Controle de dados" },
+  { icon: UserCheck, label: "Revisão médica obrigatória" },
+  { icon: Server, label: "Arquitetura segura" },
 ];
 
 const SecuritySection = () => (
-  <section id="seguranca" className="section-padding">
-    <div className="container mx-auto max-w-4xl">
-      <AnimatedSection>
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Segurança e <span className="text-gradient">responsabilidade médica</span>
+  <section id="seguranca" className="py-24 md:py-32 bg-surface">
+    <div className="container mx-auto px-6 max-w-3xl">
+      <FadeIn>
+        <div className="text-center">
+          <h2 className="text-3xl md:text-[2.2rem] font-semibold tracking-tight text-foreground">
+            Construído para ambientes clínicos.
           </h2>
         </div>
-      </AnimatedSection>
+      </FadeIn>
 
-      <div className="grid sm:grid-cols-2 gap-6">
+      <div className="mt-14 grid sm:grid-cols-2 gap-4">
         {items.map((item, i) => (
-          <AnimatedSection key={item.title} delay={i * 0.1}>
-            <div className="flex gap-4 p-6 rounded-xl surface-elevated border border-border/50 shadow-sm">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <item.icon className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">{item.title}</p>
-                <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
-              </div>
+          <FadeIn key={item.label} delay={i * 0.08}>
+            <div className="flex items-center gap-4 rounded-xl border border-border bg-background px-6 py-5">
+              <item.icon className="h-4.5 w-4.5 text-muted-foreground shrink-0" />
+              <span className="text-sm font-medium text-foreground">{item.label}</span>
             </div>
-          </AnimatedSection>
+          </FadeIn>
         ))}
       </div>
     </div>

@@ -1,53 +1,42 @@
-import { TrendingUp, DollarSign, Heart } from "lucide-react";
-import AnimatedSection from "./AnimatedSection";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
+import FadeIn from "./FadeIn";
 
-const benefits = [
-  { icon: TrendingUp, text: "Atender mais pacientes" },
-  { icon: DollarSign, text: "Faturar mais" },
-  { icon: Heart, text: "Ter mais qualidade de vida" },
+const metrics = [
+  { label: "Tempo por consulta", direction: "down" as const, value: "−70%" },
+  { label: "Produtividade clínica", direction: "up" as const, value: "+3x" },
+  { label: "Carga administrativa", direction: "down" as const, value: "−85%" },
 ];
 
 const ROISection = () => (
-  <section id="preco" className="section-padding surface-sunken">
-    <div className="container mx-auto max-w-4xl">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <AnimatedSection>
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              Quanto vale{" "}
-              <span className="text-gradient">1 a 2 horas</span> por dia?
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Se você atende 20 pacientes por dia e economiza 10 minutos por consulta:
-            </p>
-            <div className="space-y-2 text-foreground font-medium">
-              <p>→ 200 minutos economizados</p>
-              <p>→ mais de <span className="text-primary font-bold">3 horas livres</span></p>
-            </div>
-            <p className="text-muted-foreground">Você pode:</p>
-          </div>
-        </AnimatedSection>
-
-        <div className="space-y-4">
-          {benefits.map((b, i) => (
-            <AnimatedSection key={b.text} delay={i * 0.1}>
-              <div className="flex items-center gap-4 p-5 rounded-xl surface-elevated border border-border/50 shadow-sm">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <b.icon className="h-5 w-5" />
-                </div>
-                <p className="font-semibold text-foreground">{b.text}</p>
-              </div>
-            </AnimatedSection>
-          ))}
-
-          <AnimatedSection delay={0.3}>
-            <Button size="lg" className="w-full mt-2" asChild>
-              <a href="#cta-final">Começar agora <ArrowRight className="ml-2 h-4 w-4" /></a>
-            </Button>
-          </AnimatedSection>
+  <section className="py-24 md:py-32 bg-surface">
+    <div className="container mx-auto px-6 max-w-4xl">
+      <FadeIn>
+        <div className="text-center max-w-lg mx-auto">
+          <h2 className="text-3xl md:text-[2.2rem] font-semibold tracking-tight text-foreground">
+            Eficiência mensurável.
+          </h2>
+          <p className="mt-4 text-[15px] text-muted-foreground">
+            Reduza significativamente o tempo dedicado à documentação clínica.
+          </p>
         </div>
+      </FadeIn>
+
+      <div className="mt-14 grid md:grid-cols-3 gap-6">
+        {metrics.map((m, i) => (
+          <FadeIn key={m.label} delay={i * 0.1}>
+            <div className="rounded-xl border border-border bg-background p-8 text-center">
+              <div className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-surface mb-4">
+                {m.direction === "down" ? (
+                  <ArrowDown className="h-4 w-4 text-success" />
+                ) : (
+                  <ArrowUp className="h-4 w-4 text-primary" />
+                )}
+              </div>
+              <p className="text-3xl font-semibold tracking-tight text-foreground">{m.value}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{m.label}</p>
+            </div>
+          </FadeIn>
+        ))}
       </div>
     </div>
   </section>

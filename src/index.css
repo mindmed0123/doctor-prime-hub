@@ -2,39 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 210 33% 98%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 100%;
+    --foreground: 220 14% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 14% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 14% 10%;
 
-    --primary: 213 80% 50%;
+    --primary: 220 72% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 95%;
-    --secondary-foreground: 215 25% 25%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 14% 30%;
 
-    --muted: 210 15% 94%;
-    --muted-foreground: 215 12% 50%;
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 8% 46%;
 
-    --accent: 200 70% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 14% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 213 80% 50%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 72% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -46,12 +46,10 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(213 80% 50%) 0%, hsl(200 70% 45%) 100%);
-    --surface-elevated: 0 0% 100%;
-    --surface-sunken: 210 33% 96%;
-    --text-hero: 215 25% 12%;
-    --text-subtle: 215 12% 55%;
-    --success: 152 60% 42%;
+    --surface: 220 20% 98%;
+    --surface-foreground: 220 14% 10%;
+    --subtle: 220 8% 52%;
+    --success: 152 55% 41%;
     --success-foreground: 0 0% 100%;
   }
 }
@@ -67,26 +65,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-  }
-}
-
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--hero-gradient);
-  }
-
-  .section-padding {
-    @apply py-20 md:py-28 px-4 md:px-8;
-  }
-
-  .surface-elevated {
-    background-color: hsl(var(--surface-elevated));
-  }
-
-  .surface-sunken {
-    background-color: hsl(var(--surface-sunken));
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
   }
 }

@@ -1,13 +1,13 @@
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const MobileCTA = () => (
-  <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-3 surface-elevated border-t border-border/50 backdrop-blur-md bg-card/95">
-    <Button className="w-full shadow-lg shadow-primary/25" size="lg" asChild>
-      <a href="#cta-final">
-        Começar agora <ArrowRight className="ml-2 h-4 w-4" />
-      </a>
-    </Button>
+  <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden px-4 pb-4 pt-2">
+    <a
+      href="#cta-final"
+      className="flex items-center justify-center gap-2 w-full text-sm font-medium text-primary-foreground bg-foreground rounded-lg py-3 shadow-[0_4px_20px_rgb(0_0_0/0.15)]"
+    >
+      Começar <ArrowRight className="h-3.5 w-3.5" />
+    </a>
   </div>
 );
 

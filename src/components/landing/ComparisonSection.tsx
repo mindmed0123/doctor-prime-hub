@@ -1,55 +1,57 @@
-import { Check, X } from "lucide-react";
-import AnimatedSection from "./AnimatedSection";
-
-const rows = [
-  { feature: "Transcrição", competitor: true, mindmed: true },
-  { feature: "Estrutura clínica", competitor: false, mindmed: true },
-  { feature: "Hipóteses diagnósticas", competitor: false, mindmed: true },
-  { feature: "Condutas sugeridas", competitor: false, mindmed: true },
-  { feature: "Resumo para paciente", competitor: false, mindmed: true },
-  { feature: "Prontuário completo", competitor: false, mindmed: true },
-];
-
-const Icon = ({ yes }: { yes: boolean }) =>
-  yes ? (
-    <Check className="h-5 w-5 text-success mx-auto" />
-  ) : (
-    <X className="h-5 w-5 text-destructive/50 mx-auto" />
-  );
+import FadeIn from "./FadeIn";
 
 const ComparisonSection = () => (
-  <section className="section-padding surface-sunken">
-    <div className="container mx-auto max-w-3xl">
-      <AnimatedSection>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Por que a <span className="text-gradient">MindMed</span> é diferente?
-          </h2>
-        </div>
-      </AnimatedSection>
+  <section className="py-24 md:py-32">
+    <div className="container mx-auto px-6 max-w-4xl">
+      <FadeIn>
+        <h2 className="text-3xl md:text-[2.2rem] font-semibold tracking-tight text-foreground text-center">
+          Uma abordagem diferente.
+        </h2>
+      </FadeIn>
 
-      <AnimatedSection delay={0.15}>
-        <div className="rounded-xl surface-elevated border border-border/50 shadow-sm overflow-hidden">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left p-4 font-semibold text-foreground">Recurso</th>
-                <th className="text-center p-4 font-semibold text-muted-foreground">Concorrentes</th>
-                <th className="text-center p-4 font-semibold text-primary">MindMed</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r, i) => (
-                <tr key={r.feature} className={i < rows.length - 1 ? "border-b border-border/50" : ""}>
-                  <td className="p-4 font-medium text-foreground">{r.feature}</td>
-                  <td className="p-4"><Icon yes={r.competitor} /></td>
-                  <td className="p-4 bg-primary/5"><Icon yes={r.mindmed} /></td>
-                </tr>
+      <div className="mt-16 grid md:grid-cols-2 gap-8">
+        <FadeIn delay={0.05}>
+          <div className="rounded-xl border border-border p-8">
+            <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-6">
+              Outras soluções
+            </p>
+            <ul className="space-y-4">
+              {[
+                "Transcrição simples, sem estrutura",
+                "Texto contínuo e não organizado",
+                "Dependência de edição manual",
+                "Sem lógica clínica integrada",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-border shrink-0" />
+                  {t}
+                </li>
               ))}
-            </tbody>
-          </table>
-        </div>
-      </AnimatedSection>
+            </ul>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <div className="rounded-xl border border-foreground/10 bg-foreground p-8">
+            <p className="text-xs font-medium uppercase tracking-widest text-primary-foreground/50 mb-6">
+              MindMed
+            </p>
+            <ul className="space-y-4">
+              {[
+                "Estrutura clínica automática",
+                "Organização lógica por seções",
+                "Documento pronto para uso",
+                "Raciocínio médico integrado",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-3 text-sm text-primary-foreground/90">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </FadeIn>
+      </div>
     </div>
   </section>
 );
