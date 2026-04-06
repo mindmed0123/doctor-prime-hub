@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
 
         <a href="#planos" className="hidden md:inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
-          Entrar
+          Começar agora
         </a>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
