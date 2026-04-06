@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import FadeIn from "./FadeIn";
-import appScreenshot from "@/assets/app-screenshot.jpg";
+import dashboardPreview from "@/assets/dashboard-preview.png";
 import { Heart, Zap } from "lucide-react";
 
 const phrases = [
