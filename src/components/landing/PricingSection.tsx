@@ -18,6 +18,8 @@ const plans: Array<{
   subtitle: string;
   summary: string;
   cta: string;
+  perConsultation: string;
+  timeSaved: string;
   perks: string[];
 }> = [
   {
@@ -25,27 +27,31 @@ const plans: Array<{
     badge: "7 dias grátis",
     title: "MindMed Starter",
     subtitle: "Operação individual",
-    summary: "Para médicos que querem ganhar velocidade mantendo clareza clínica e documentação consistente.",
-    cta: "Começar teste grátis",
+    summary: "Economize tempo em cada consulta com transcrição e laudos automáticos.",
+    cta: "Começar agora",
+    perConsultation: "Menos de R$5 por consulta",
+    timeSaved: "Economize até 40h por mês",
     perks: [
       "Transcrição automática da consulta",
-      "Estruturação clínica com CID, hipótese e conduta",
-      "Laudos e resumos essenciais",
-      "Fluxo ideal para consultório individual",
+      "Gere laudos automaticamente com CID e conduta",
+      "Anamnese estruturada em segundos",
+      "Ideal para consultório individual",
     ],
   },
   {
     key: "pro",
-    badge: "Plano avançado",
+    badge: "Mais escolhido",
     title: "MindMed Pro",
-    subtitle: "Maior profundidade clínica",
-    summary: "Para profissionais e clínicas que precisam de mais automação, mais consistência e maior capacidade operacional.",
-    cta: "Assinar MindMed Pro",
+    subtitle: "Clínicas e alta demanda",
+    summary: "Automação completa para quem precisa de velocidade, precisão e escala na documentação.",
+    cta: "Testar agora",
+    perConsultation: "Menos de R$15 por consulta",
+    timeSaved: "Economize até 60h por mês",
     perks: [
       "Tudo do Starter incluído",
-      "Prescrição e receituário com mais agilidade",
+      "Prescrição e receituário automatizados",
       "Relatórios evolutivos e documentação expandida",
-      "Fluxo premium para prática de maior complexidade",
+      "Fluxo premium para múltiplos atendimentos",
     ],
   },
 ];
@@ -91,8 +97,10 @@ const PricingSection = () => {
               <FadeIn key={plan.key} delay={0.08 * (index + 1)}>
                 <article
                   className={[
-                    "flex h-full flex-col rounded-3xl border bg-background p-8 shadow-xl",
-                    isPrimary ? "border-primary/30 shadow-primary/10" : "border-border shadow-primary/5",
+                    "relative flex h-full flex-col rounded-3xl border bg-background p-8",
+                    isPrimary
+                      ? "border-primary shadow-[0_8px_40px_-12px_hsl(var(--primary)/0.25)] ring-1 ring-primary/20"
+                      : "border-border shadow-xl shadow-primary/5",
                   ].join(" ")}
                 >
                   <div className="flex items-start justify-between gap-4">
@@ -121,6 +129,14 @@ const PricingSection = () => {
                         ? `${stripePlan.trialDays} dias de teste antes da primeira cobrança.`
                         : "Ativação imediata após confirmação do pagamento."}
                     </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center rounded-full bg-success/10 px-3 py-1 text-xs font-medium text-success">
+                        {plan.perConsultation}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-primary-light px-3 py-1 text-xs font-medium text-primary">
+                        {plan.timeSaved}
+                      </span>
+                    </div>
                   </div>
 
                   <ul className="mt-8 space-y-3">

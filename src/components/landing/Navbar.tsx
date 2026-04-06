@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
 
         <a href="#planos" className="hidden md:inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
-          Entrar
+          Começar agora
         </a>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -48,7 +48,7 @@ const Navbar = () => {
             <a key={label} href={href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm text-muted-foreground">{label}</a>
           ))}
           <a href="#planos" onClick={() => setMobileOpen(false)} className="block mt-3 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5">
-            Entrar
+            Começar agora
           </a>
         </div>
       )}

@@ -4,9 +4,9 @@ import appScreenshot from "@/assets/app-screenshot.jpg";
 import { Heart, Zap } from "lucide-react";
 
 const phrases = [
-  "para médicos que cuidam.",
-  "para consultas reais.",
-  "para quem valoriza o paciente.",
+  "em segundos.",
+  "com precisão clínica.",
+  "sem digitar nada.",
 ];
 
 const HeroSection = () => {
@@ -52,7 +52,7 @@ const HeroSection = () => {
         {/* Headline with typing effect */}
         <FadeIn delay={0.05}>
           <h1 className="font-mono text-4xl md:text-6xl lg:text-[3.8rem] font-bold leading-[1.15] tracking-tight text-foreground max-w-4xl mx-auto">
-            Documentação clínica{" "}
+            A IA que transforma sua consulta em um laudo completo{" "}
             <span className="text-primary">
               {phrases[phraseIndex].substring(0, charIndex)}
             </span>
@@ -61,8 +61,8 @@ const HeroSection = () => {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="mt-6 text-base md:text-[17px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Seu assistente para consultas, documentação e produtividade. Sempre com você.
+          <p className="mt-6 text-base md:text-[17px] text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Mais de 2.000 médicos já usam a MindMed para economizar até 2 horas por dia e focar no paciente.
           </p>
         </FadeIn>
 
@@ -70,7 +70,7 @@ const HeroSection = () => {
         <FadeIn delay={0.15}>
           <div className="mt-8">
             <a href="#planos" className="inline-flex items-center text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-8 py-3.5 transition-colors shadow-lg shadow-primary/25">
-              Iniciar teste gratuito
+              Gerar meu primeiro laudo
             </a>
           </div>
         </FadeIn>

@@ -1,8 +1,11 @@
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import TestimonialMarquee from "@/components/landing/TestimonialMarquee";
+import ROISection from "@/components/landing/ROISection";
+import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
+import SocialProofSection from "@/components/landing/SocialProofSection";
 import SecuritySection from "@/components/landing/SecuritySection";
 import PricingSection from "@/components/landing/PricingSection";
 import FAQSection from "@/components/landing/FAQSection";
@@ -15,8 +18,11 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <TestimonialMarquee />
+    <ROISection />
+    <HowItWorksSection />
     <FeaturesSection />
     <BenefitsSection />
+    <SocialProofSection />
     <SecuritySection />
     <PricingSection />
     <FAQSection />

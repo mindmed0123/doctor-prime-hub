@@ -10,11 +10,14 @@ const FinalCTASection = () => (
 
           <div className="relative">
             <h2 className="font-mono text-2xl md:text-4xl font-bold text-primary-foreground max-w-lg mx-auto leading-tight">
-              Pronto para transformar minutos digitados em minutos de cuidado?
+              Pare de perder tempo com burocracia.
             </h2>
+            <p className="mt-4 text-primary-foreground/80 text-base max-w-md mx-auto">
+              A MindMed cuida da documentação. Você cuida do paciente.
+            </p>
             <div className="mt-8">
               <a href="#planos" className="inline-flex items-center text-[15px] font-semibold text-primary bg-background hover:bg-background/90 rounded-full px-8 py-3.5 transition-colors">
-                Iniciar teste gratuito
+                Começar agora
               </a>
             </div>
           </div>
