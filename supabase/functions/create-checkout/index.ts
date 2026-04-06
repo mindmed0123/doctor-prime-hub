@@ -40,8 +40,8 @@ serve(async (req) => {
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
     if (!supabaseUrl) throw new Error("SUPABASE_URL is not set");
 
-    const publishableKey = Deno.env.get("SUPABASE_PUBLISHABLE_KEY");
-    if (!publishableKey) throw new Error("SUPABASE_PUBLISHABLE_KEY is not set");
+    const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
+    if (!anonKey) throw new Error("SUPABASE_ANON_KEY is not set");
 
     const { plan } = await req.json();
     if (!isPlanKey(plan)) {
