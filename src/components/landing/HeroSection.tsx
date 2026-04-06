@@ -52,9 +52,9 @@ const HeroSection = () => {
         {/* Headline with typing effect */}
         <FadeIn delay={0.05}>
           <h1 className="font-mono text-4xl md:text-6xl lg:text-[3.8rem] font-bold leading-[1.15] tracking-tight text-foreground max-w-4xl mx-auto">
-            A IA que transforma sua consulta em um laudo completo{" "}
-            <span className="text-primary inline-block min-h-[1.2em]">
-              <span>{phrases[phraseIndex].substring(0, charIndex)}</span>
+            <span className="block">A IA que transforma sua consulta em um laudo completo</span>
+            <span className="mt-2 block min-h-[2.3em] text-primary md:min-h-[1.15em]">
+              {phrases[phraseIndex].substring(0, charIndex)}
               <span className="animate-blink">_</span>
             </span>
           </h1>
