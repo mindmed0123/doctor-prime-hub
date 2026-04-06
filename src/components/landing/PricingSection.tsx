@@ -18,6 +18,8 @@ const plans: Array<{
   subtitle: string;
   summary: string;
   cta: string;
+  perConsultation: string;
+  timeSaved: string;
   perks: string[];
 }> = [
   {
@@ -25,27 +27,31 @@ const plans: Array<{
     badge: "7 dias grátis",
     title: "MindMed Starter",
     subtitle: "Operação individual",
-    summary: "Para médicos que querem ganhar velocidade mantendo clareza clínica e documentação consistente.",
-    cta: "Começar teste grátis",
+    summary: "Economize tempo em cada consulta com transcrição e laudos automáticos.",
+    cta: "Começar agora",
+    perConsultation: "Menos de R$5 por consulta",
+    timeSaved: "Economize até 40h por mês",
     perks: [
       "Transcrição automática da consulta",
-      "Estruturação clínica com CID, hipótese e conduta",
-      "Laudos e resumos essenciais",
-      "Fluxo ideal para consultório individual",
+      "Gere laudos automaticamente com CID e conduta",
+      "Anamnese estruturada em segundos",
+      "Ideal para consultório individual",
     ],
   },
   {
     key: "pro",
-    badge: "Plano avançado",
+    badge: "Mais escolhido",
     title: "MindMed Pro",
-    subtitle: "Maior profundidade clínica",
-    summary: "Para profissionais e clínicas que precisam de mais automação, mais consistência e maior capacidade operacional.",
-    cta: "Assinar MindMed Pro",
+    subtitle: "Clínicas e alta demanda",
+    summary: "Automação completa para quem precisa de velocidade, precisão e escala na documentação.",
+    cta: "Testar agora",
+    perConsultation: "Menos de R$15 por consulta",
+    timeSaved: "Economize até 60h por mês",
     perks: [
       "Tudo do Starter incluído",
-      "Prescrição e receituário com mais agilidade",
+      "Prescrição e receituário automatizados",
       "Relatórios evolutivos e documentação expandida",
-      "Fluxo premium para prática de maior complexidade",
+      "Fluxo premium para múltiplos atendimentos",
     ],
   },
 ];
