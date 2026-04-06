@@ -70,7 +70,7 @@ const HeroSection = () => {
         <FadeIn delay={0.15}>
           <div className="mt-8">
             <a href="#planos" className="inline-flex items-center text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-8 py-3.5 transition-colors shadow-lg shadow-primary/25">
-              Iniciar teste gratuito
+              Gerar meu primeiro laudo
             </a>
           </div>
         </FadeIn>

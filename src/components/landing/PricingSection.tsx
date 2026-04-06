@@ -97,8 +97,10 @@ const PricingSection = () => {
               <FadeIn key={plan.key} delay={0.08 * (index + 1)}>
                 <article
                   className={[
-                    "flex h-full flex-col rounded-3xl border bg-background p-8 shadow-xl",
-                    isPrimary ? "border-primary/30 shadow-primary/10" : "border-border shadow-primary/5",
+                    "relative flex h-full flex-col rounded-3xl border bg-background p-8",
+                    isPrimary
+                      ? "border-primary shadow-[0_8px_40px_-12px_hsl(var(--primary)/0.25)] ring-1 ring-primary/20"
+                      : "border-border shadow-xl shadow-primary/5",
                   ].join(" ")}
                 >
                   <div className="flex items-start justify-between gap-4">

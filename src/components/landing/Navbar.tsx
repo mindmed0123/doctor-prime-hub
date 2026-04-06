@@ -48,7 +48,7 @@ const Navbar = () => {
             <a key={label} href={href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm text-muted-foreground">{label}</a>
           ))}
           <a href="#planos" onClick={() => setMobileOpen(false)} className="block mt-3 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5">
-            Entrar
+            Começar agora
           </a>
         </div>
       )}

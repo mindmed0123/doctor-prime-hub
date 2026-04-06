@@ -38,7 +38,7 @@ const BenefitsSection = () => (
 
             <div className="pt-4">
               <a href="#planos" className="inline-flex items-center text-sm font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-6 py-3 transition-colors">
-                Iniciar teste gratuito
+                Testar agora
               </a>
             </div>
           </div>
