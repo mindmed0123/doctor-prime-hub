@@ -14,7 +14,7 @@ import MobileCTA from "@/components/landing/MobileCTA";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen bg-background pb-16 md:pb-0">
     <Navbar />
     <HeroSection />
     <TestimonialMarquee />
