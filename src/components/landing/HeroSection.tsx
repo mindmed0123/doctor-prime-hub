@@ -4,9 +4,9 @@ import appScreenshot from "@/assets/app-screenshot.jpg";
 import { Heart, Zap } from "lucide-react";
 
 const phrases = [
-  "para médicos que cuidam.",
-  "para consultas reais.",
-  "para quem valoriza o paciente.",
+  "em segundos.",
+  "com precisão clínica.",
+  "sem digitar nada.",
 ];
 
 const HeroSection = () => {
