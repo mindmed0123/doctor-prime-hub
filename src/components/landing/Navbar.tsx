@@ -33,9 +33,14 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a href="#planos" className="hidden md:inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
-          Começar agora
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <a href="https://acesso.mindmed.online" className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors px-4 py-2.5">
+            Entrar
+          </a>
+          <a href="#planos" className="inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
+            Começar agora
+          </a>
+        </div>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
