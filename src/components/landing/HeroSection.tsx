@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import FadeIn from "./FadeIn";
-import appScreenshot from "@/assets/app-screenshot.jpg";
+import dashboardPreview from "@/assets/dashboard-preview.png";
 import { Heart, Zap } from "lucide-react";
 
 const phrases = [
@@ -53,10 +53,10 @@ const HeroSection = () => {
         <FadeIn delay={0.05}>
           <h1 className="font-mono text-4xl md:text-6xl lg:text-[3.8rem] font-bold leading-[1.15] tracking-tight text-foreground max-w-4xl mx-auto">
             A IA que transforma sua consulta em um laudo completo{" "}
-            <span className="text-primary">
-              {phrases[phraseIndex].substring(0, charIndex)}
+            <span className="text-primary inline-block min-h-[1.2em]">
+              <span>{phrases[phraseIndex].substring(0, charIndex)}</span>
+              <span className="animate-blink">_</span>
             </span>
-            <span className="text-primary animate-blink">_</span>
           </h1>
         </FadeIn>
 
@@ -91,7 +91,7 @@ const HeroSection = () => {
         <FadeIn delay={0.25} y={40}>
           <div className="mt-16 max-w-5xl mx-auto">
             <div className="rounded-t-2xl md:rounded-t-3xl overflow-hidden border border-b-0 border-border shadow-[0_-5px_60px_-15px_hsl(var(--primary)/0.15)]">
-              <img src={appScreenshot} alt="Interface MindMed" className="w-full" loading="eager" />
+              <img src={dashboardPreview} alt="Interface MindMed — Dashboard" className="w-full" loading="eager" />
             </div>
           </div>
         </FadeIn>
