@@ -1,0 +1,117 @@
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import Stripe from "https://esm.sh/stripe@18.5.0";
+import { createClient } from "npm:@supabase/supabase-js@2.57.2";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+};
+
+const PRODUCT_TO_PLAN = {
+  prod_U7KJ2V2HJKkJ14: "starter",
+  prod_U7KKGxZRigRnu6: "pro",
+} as const;
+
+type StripePlanKey = (typeof PRODUCT_TO_PLAN)[keyof typeof PRODUCT_TO_PLAN];
+
+const json = (body: unknown, status: number) =>
+  new Response(JSON.stringify(body), {
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+    status,
+  });
+
+serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
+    if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
+
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    if (!supabaseUrl) throw new Error("SUPABASE_URL is not set");
+
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    if (!serviceRoleKey) throw new Error("SUPABASE_SERVICE_ROLE_KEY is not set");
+
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader) throw new Error("No authorization header provided");
+
+    const supabaseClient = createClient(supabaseUrl, serviceRoleKey, {
+      auth: { persistSession: false },
+    });
+
+    const token = authHeader.replace("Bearer ", "");
+    const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
+    if (userError) throw new Error(`Authentication error: ${userError.message}`);
+
+    const user = userData.user;
+    if (!user?.email) throw new Error("User not authenticated or email not available");
+
+    const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
+    const customers = await stripe.customers.list({ email: user.email, limit: 1 });
+
+    if (customers.data.length === 0) {
+      return json({
+        subscribed: false,
+        plan: null,
+        product_id: null,
+        price_id: null,
+        subscription_end: null,
+      }, 200);
+    }
+
+    const subscriptions = await stripe.subscriptions.list({
+      customer: customers.data[0].id,
+      status: "all",
+      limit: 10,
+    });
+
+    const matchingSubscription = subscriptions.data.find((subscription) => {
+      if (!["active", "trialing"].includes(subscription.status)) {
+        return false;
+      }
+
+      return subscription.items.data.some((item) => String(item.price.product) in PRODUCT_TO_PLAN);
+    });
+
+    if (!matchingSubscription) {
+      return json({
+        subscribed: false,
+        plan: null,
+        product_id: null,
+        price_id: null,
+        subscription_end: null,
+      }, 200);
+    }
+
+    const matchingItem = matchingSubscription.items.data.find(
+      (item) => String(item.price.product) in PRODUCT_TO_PLAN,
+    );
+
+    if (!matchingItem) {
+      return json({
+        subscribed: false,
+        plan: null,
+        product_id: null,
+        price_id: null,
+        subscription_end: null,
+      }, 200);
+    }
+
+    const productId = String(matchingItem.price.product);
+    const plan = PRODUCT_TO_PLAN[productId as keyof typeof PRODUCT_TO_PLAN] as StripePlanKey;
+
+    return json({
+      subscribed: true,
+      plan,
+      product_id: productId,
+      price_id: matchingItem.price.id,
+      subscription_end: new Date(matchingSubscription.current_period_end * 1000).toISOString(),
+    }, 200);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    return json({ error: message }, 500);
+  }
+});
