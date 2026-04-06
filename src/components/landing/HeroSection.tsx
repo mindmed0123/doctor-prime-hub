@@ -91,7 +91,7 @@ const HeroSection = () => {
         <FadeIn delay={0.25} y={40}>
           <div className="mt-16 max-w-5xl mx-auto">
             <div className="rounded-t-2xl md:rounded-t-3xl overflow-hidden border border-b-0 border-border shadow-[0_-5px_60px_-15px_hsl(var(--primary)/0.15)]">
-              <img src={appScreenshot} alt="Interface MindMed" className="w-full" loading="eager" />
+              <img src={dashboardPreview} alt="Interface MindMed — Dashboard" className="w-full" loading="eager" />
             </div>
           </div>
         </FadeIn>
