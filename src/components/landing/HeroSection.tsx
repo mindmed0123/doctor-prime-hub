@@ -61,8 +61,8 @@ const HeroSection = () => {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="mt-6 text-base md:text-[17px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Seu assistente para consultas, documentação e produtividade. Sempre com você.
+          <p className="mt-6 text-base md:text-[17px] text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Mais de 2.000 médicos já usam a MindMed para economizar até 2 horas por dia e focar no paciente.
           </p>
         </FadeIn>
 
