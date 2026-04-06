@@ -53,10 +53,10 @@ const HeroSection = () => {
         <FadeIn delay={0.05}>
           <h1 className="font-mono text-4xl md:text-6xl lg:text-[3.8rem] font-bold leading-[1.15] tracking-tight text-foreground max-w-4xl mx-auto">
             A IA que transforma sua consulta em um laudo completo{" "}
-            <span className="text-primary">
-              {phrases[phraseIndex].substring(0, charIndex)}
+            <span className="text-primary inline-block min-h-[1.2em]">
+              <span>{phrases[phraseIndex].substring(0, charIndex)}</span>
+              <span className="animate-blink">_</span>
             </span>
-            <span className="text-primary animate-blink">_</span>
           </h1>
         </FadeIn>
 
