@@ -56,7 +56,7 @@ serve(async (req) => {
 
     const authHeader = req.headers.get("Authorization");
     if (authHeader?.startsWith("Bearer ")) {
-      const supabaseClient = createClient(supabaseUrl, publishableKey, {
+      const supabaseClient = createClient(supabaseUrl, anonKey, {
         auth: { persistSession: false },
       });
 
