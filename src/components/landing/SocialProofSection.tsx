@@ -8,26 +8,26 @@ const testimonials = [
 ];
 
 const SocialProofSection = () => (
-  <section className="py-24 md:py-32 bg-surface">
-    <div className="container mx-auto max-w-5xl">
+  <section className="py-16 md:py-32 bg-surface">
+    <div className="container mx-auto max-w-5xl px-5 md:px-6">
       <FadeIn>
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center rounded-full bg-primary-light text-primary text-xs font-semibold px-4 py-1.5 uppercase tracking-wider mb-6">
+        <div className="text-center mb-10 md:mb-16">
+          <span className="inline-flex items-center rounded-full bg-primary-light text-primary text-xs font-semibold px-4 py-1.5 uppercase tracking-wider mb-4 md:mb-6">
             Depoimentos
           </span>
-          <h2 className="font-mono text-3xl md:text-[2.5rem] font-bold tracking-tight text-foreground leading-tight max-w-2xl mx-auto">
+          <h2 className="font-mono text-2xl md:text-[2.5rem] font-bold tracking-tight text-foreground leading-tight max-w-2xl mx-auto">
             Mais de 2.000 médicos já estão usando a MindMed
           </h2>
         </div>
       </FadeIn>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         {testimonials.map((t, i) => (
           <FadeIn key={t.author} delay={i * 0.08}>
-            <div className="rounded-2xl border border-border bg-background p-8 shadow-sm h-full flex flex-col">
-              <Quote className="h-5 w-5 text-primary/40 mb-4" />
-              <p className="text-[15px] text-foreground leading-relaxed flex-1">"{t.quote}"</p>
-              <div className="mt-6 pt-4 border-t border-border">
+            <div className="rounded-xl md:rounded-2xl border border-border bg-background p-6 md:p-8 shadow-sm h-full flex flex-col">
+              <Quote className="h-4 w-4 md:h-5 md:w-5 text-primary/40 mb-3 md:mb-4" />
+              <p className="text-sm md:text-[15px] text-foreground leading-relaxed flex-1">"{t.quote}"</p>
+              <div className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-border">
                 <p className="text-sm font-semibold text-foreground">{t.author}</p>
                 <p className="text-xs text-muted-foreground">{t.specialty}</p>
               </div>
