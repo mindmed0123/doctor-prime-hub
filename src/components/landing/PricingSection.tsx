@@ -29,11 +29,11 @@ const plans: Array<{
     subtitle: "Operação individual",
     summary: "Economize tempo em cada consulta com transcrição e laudos automáticos.",
     cta: "Começar agora",
-    perConsultation: "Menos de R$5 por consulta",
-    timeSaved: "Economize até 40h por mês",
+    perConsultation: "Menos de R$5/consulta",
+    timeSaved: "Economize até 40h/mês",
     perks: [
       "Transcrição automática da consulta",
-      "Gere laudos automaticamente com CID e conduta",
+      "Laudos com CID e conduta",
       "Anamnese estruturada em segundos",
       "Ideal para consultório individual",
     ],
@@ -43,14 +43,14 @@ const plans: Array<{
     badge: "Mais escolhido",
     title: "MindMed Pro",
     subtitle: "Clínicas e alta demanda",
-    summary: "Automação completa para quem precisa de velocidade, precisão e escala na documentação.",
+    summary: "Automação completa para quem precisa de velocidade, precisão e escala.",
     cta: "Testar agora",
-    perConsultation: "Menos de R$15 por consulta",
-    timeSaved: "Economize até 60h por mês",
+    perConsultation: "Menos de R$15/consulta",
+    timeSaved: "Economize até 60h/mês",
     perks: [
       "Tudo do Starter incluído",
       "Prescrição e receituário automatizados",
-      "Relatórios evolutivos e documentação expandida",
+      "Relatórios evolutivos expandidos",
       "Fluxo premium para múltiplos atendimentos",
     ],
   },
@@ -71,23 +71,23 @@ const PricingSection = () => {
   };
 
   return (
-    <section id="planos" className="bg-surface py-24 md:py-32">
-      <div className="container mx-auto max-w-6xl">
+    <section id="planos" className="bg-surface py-16 md:py-32">
+      <div className="container mx-auto max-w-6xl px-5 md:px-6">
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">
             <span className="inline-flex items-center rounded-full bg-primary-light px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
               Planos
             </span>
-            <h2 className="mt-6 text-center font-mono text-3xl font-bold leading-tight tracking-tight text-foreground md:text-[2.5rem]">
-              Escolha o nível de estrutura clínica que faz sentido para sua operação.
+            <h2 className="mt-4 md:mt-6 text-center font-mono text-2xl md:text-[2.5rem] font-bold leading-tight tracking-tight text-foreground">
+              Escolha o plano ideal para sua operação.
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground md:text-base">
-              Checkout recorrente via Stripe, com cobrança mensal e entrada imediata na plataforma.
+            <p className="mt-3 md:mt-4 text-xs md:text-base text-muted-foreground">
+              Checkout recorrente via Stripe, com cobrança mensal e entrada imediata.
             </p>
           </div>
         </FadeIn>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-8 md:mt-12 grid gap-4 md:gap-6 lg:grid-cols-2">
           {plans.map((plan, index) => {
             const stripePlan = STRIPE_PLANS[plan.key];
             const isLoading = loadingPlan === plan.key;
@@ -97,53 +97,53 @@ const PricingSection = () => {
               <FadeIn key={plan.key} delay={0.08 * (index + 1)}>
                 <article
                   className={[
-                    "relative flex h-full flex-col rounded-3xl border bg-background p-8",
+                    "relative flex h-full flex-col rounded-2xl md:rounded-3xl border bg-background p-5 md:p-8",
                     isPrimary
                       ? "border-primary shadow-[0_8px_40px_-12px_hsl(var(--primary)/0.25)] ring-1 ring-primary/20"
                       : "border-border shadow-xl shadow-primary/5",
                   ].join(" ")}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-3">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                         {plan.subtitle}
                       </p>
-                      <h3 className="mt-3 text-2xl font-bold text-foreground">{plan.title}</h3>
+                      <h3 className="mt-2 md:mt-3 text-xl md:text-2xl font-bold text-foreground">{plan.title}</h3>
                     </div>
-                    <span className="inline-flex rounded-full bg-primary-light px-3 py-1 text-xs font-semibold text-primary">
+                    <span className="inline-flex rounded-full bg-primary-light px-2.5 md:px-3 py-1 text-[10px] md:text-xs font-semibold text-primary whitespace-nowrap">
                       {plan.badge}
                     </span>
                   </div>
 
-                  <p className="mt-5 text-sm leading-6 text-muted-foreground">{plan.summary}</p>
+                  <p className="mt-3 md:mt-5 text-xs md:text-sm leading-relaxed text-muted-foreground">{plan.summary}</p>
 
-                  <div className="mt-8 border-y border-border py-6">
-                    <div className="flex items-end gap-2">
-                      <span className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+                  <div className="mt-5 md:mt-8 border-y border-border py-4 md:py-6">
+                    <div className="flex items-end gap-1.5 md:gap-2">
+                      <span className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
                         {formatCurrency(stripePlan.monthlyPriceInCents)}
                       </span>
-                      <span className="pb-1 text-sm text-muted-foreground">/mês</span>
+                      <span className="pb-0.5 md:pb-1 text-xs md:text-sm text-muted-foreground">/mês</span>
                     </div>
-                    <p className="mt-2 text-xs text-muted-foreground">
+                    <p className="mt-1.5 md:mt-2 text-[10px] md:text-xs text-muted-foreground">
                       {stripePlan.trialDays > 0
                         ? `${stripePlan.trialDays} dias de teste antes da primeira cobrança.`
                         : "Ativação imediata após confirmação do pagamento."}
                     </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <span className="inline-flex items-center rounded-full bg-success/10 px-3 py-1 text-xs font-medium text-success">
+                    <div className="mt-2 md:mt-3 flex flex-wrap gap-1.5 md:gap-2">
+                      <span className="inline-flex items-center rounded-full bg-success/10 px-2.5 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-medium text-success">
                         {plan.perConsultation}
                       </span>
-                      <span className="inline-flex items-center rounded-full bg-primary-light px-3 py-1 text-xs font-medium text-primary">
+                      <span className="inline-flex items-center rounded-full bg-primary-light px-2.5 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-medium text-primary">
                         {plan.timeSaved}
                       </span>
                     </div>
                   </div>
 
-                  <ul className="mt-8 space-y-3">
+                  <ul className="mt-5 md:mt-8 space-y-2.5 md:space-y-3">
                     {plan.perks.map((perk) => (
-                      <li key={perk} className="flex items-start gap-3 text-sm text-foreground">
-                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                          <Check className="h-3 w-3 text-primary" />
+                      <li key={perk} className="flex items-start gap-2.5 md:gap-3 text-xs md:text-sm text-foreground">
+                        <div className="mt-0.5 flex h-4 w-4 md:h-5 md:w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                          <Check className="h-2.5 w-2.5 md:h-3 md:w-3 text-primary" />
                         </div>
                         <span>{perk}</span>
                       </li>
@@ -155,7 +155,7 @@ const PricingSection = () => {
                     onClick={() => void handleCheckout(plan.key)}
                     disabled={isLoading}
                     className={[
-                      "mt-8 inline-flex w-full items-center justify-center rounded-full py-3.5 text-[15px] font-semibold transition-colors",
+                      "mt-5 md:mt-8 inline-flex w-full items-center justify-center rounded-full py-3 md:py-3.5 text-sm md:text-[15px] font-semibold transition-colors",
                       isPrimary
                         ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
                         : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
@@ -171,8 +171,8 @@ const PricingSection = () => {
                     )}
                   </button>
 
-                  <p className="mt-3 text-center text-xs text-muted-foreground">
-                    Sem fidelidade contratual. Cancelamento pelo portal do cliente.
+                  <p className="mt-2 md:mt-3 text-center text-[10px] md:text-xs text-muted-foreground">
+                    Sem fidelidade. Cancelamento pelo portal do cliente.
                   </p>
                 </article>
               </FadeIn>
