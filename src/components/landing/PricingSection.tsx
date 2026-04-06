@@ -127,6 +127,14 @@ const PricingSection = () => {
                         ? `${stripePlan.trialDays} dias de teste antes da primeira cobrança.`
                         : "Ativação imediata após confirmação do pagamento."}
                     </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center rounded-full bg-success/10 px-3 py-1 text-xs font-medium text-success">
+                        {plan.perConsultation}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-primary-light px-3 py-1 text-xs font-medium text-primary">
+                        {plan.timeSaved}
+                      </span>
+                    </div>
                   </div>
 
                   <ul className="mt-8 space-y-3">
