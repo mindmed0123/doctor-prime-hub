@@ -2,18 +2,18 @@ import { supabase } from "@/integrations/supabase/client";
 
 export const STRIPE_PLANS = {
   starter: {
-    priceId: "price_1T95efRpmClnFRZos0lGXwwj",
-    productId: "prod_U7KJ2V2HJKkJ14",
+    priceId: "price_1TGifLRpmClnFRZorjPjg87R",
+    productId: "prod_UFD5Rd5oLwqFm3",
     name: "MindMed Starter",
-    monthlyPriceInCents: 9990,
+    monthlyPriceInCents: 14900,
     trialDays: 7,
   },
   pro: {
-    priceId: "price_1T95fURpmClnFRZoFjoXAteA",
-    productId: "prod_U7KKGxZRigRnu6",
+    priceId: "price_1TGigCRpmClnFRZo9mrdRDrd",
+    productId: "prod_UFD6iQrFN8u3AO",
     name: "MindMed Pro",
     monthlyPriceInCents: 29900,
-    trialDays: 0,
+    trialDays: 7,
   },
 } as const;
 
