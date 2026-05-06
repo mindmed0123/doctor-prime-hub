@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 const PRODUCT_TO_PLAN = {
-  prod_UTB1YEG232kR1H: "starter",
+  prod_UTB5ckEKQVGkUL: "starter",
   prod_UFD5Rd5oLwqFm3: "starter",
   prod_UFD6iQrFN8u3AO: "pro",
   prod_U7KJ2V2HJKkJ14: "starter",
