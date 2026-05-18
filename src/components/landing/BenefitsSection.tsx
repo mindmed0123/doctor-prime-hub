@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import FadeIn from "./FadeIn";
+import { trackLead } from "@/lib/fbq";
 
 const bullets = [
   "Economize até 10 minutos por consulta",
@@ -37,7 +38,7 @@ const BenefitsSection = () => (
             ))}
 
             <div className="pt-3 md:pt-4">
-              <a href="#planos" className="inline-flex items-center text-sm font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-6 py-3 transition-colors">
+              <a href="#planos" onClick={trackLead} className="inline-flex items-center text-sm font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-6 py-3 transition-colors">
                 Testar agora
               </a>
             </div>

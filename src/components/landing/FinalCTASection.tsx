@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import { trackLead } from "@/lib/fbq";
 
 const FinalCTASection = () => (
   <section className="py-12 md:py-24">
@@ -14,7 +15,7 @@ const FinalCTASection = () => (
               A MindMed cuida da documentação. Você cuida do paciente.
             </p>
             <div className="mt-6 md:mt-8">
-              <a href="#planos" className="inline-flex items-center text-sm md:text-[15px] font-semibold text-primary bg-background hover:bg-background/90 rounded-full px-6 md:px-8 py-3 md:py-3.5 transition-colors">
+              <a href="#planos" onClick={trackLead} className="inline-flex items-center text-sm md:text-[15px] font-semibold text-primary bg-background hover:bg-background/90 rounded-full px-6 md:px-8 py-3 md:py-3.5 transition-colors">
                 Começar agora
               </a>
             </div>

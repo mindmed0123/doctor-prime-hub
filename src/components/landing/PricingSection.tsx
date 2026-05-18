@@ -2,6 +2,7 @@ import { Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { createCheckoutSession, STRIPE_PLANS, type StripePlanKey } from "@/lib/stripe";
+import { trackLead } from "@/lib/fbq";
 import FadeIn from "./FadeIn";
 
 const formatCurrency = (amountInCents: number) =>
@@ -62,6 +63,7 @@ const PricingSection = () => {
   const handleCheckout = async (plan: StripePlanKey) => {
     try {
       setLoadingPlan(plan);
+      trackLead();
       await createCheckoutSession(plan);
     } catch (error) {
       toast.error("Erro ao iniciar o checkout. Tente novamente.");
