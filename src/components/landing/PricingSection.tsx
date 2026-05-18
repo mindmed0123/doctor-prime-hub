@@ -63,6 +63,7 @@ const PricingSection = () => {
   const handleCheckout = async (plan: StripePlanKey) => {
     try {
       setLoadingPlan(plan);
+      trackLead();
       await createCheckoutSession(plan);
     } catch (error) {
       toast.error("Erro ao iniciar o checkout. Tente novamente.");
