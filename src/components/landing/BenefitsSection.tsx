@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import FadeIn from "./FadeIn";
+import { trackLead } from "@/lib/fbq";
 
 const bullets = [
   "Economize até 10 minutos por consulta",
