@@ -74,7 +74,7 @@ const HeroSection = () => {
         {/* CTA */}
         <FadeIn delay={0.15}>
           <div className="mt-6 md:mt-8">
-            <a href="#planos" className="inline-flex items-center text-sm md:text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-6 md:px-8 py-3 md:py-3.5 transition-colors shadow-lg shadow-primary/25">
+            <a href="#planos" onClick={trackLead} className="inline-flex items-center text-sm md:text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-6 md:px-8 py-3 md:py-3.5 transition-colors shadow-lg shadow-primary/25">
               Gerar meu primeiro laudo
             </a>
           </div>
