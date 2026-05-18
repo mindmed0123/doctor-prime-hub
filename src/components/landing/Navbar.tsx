@@ -56,7 +56,7 @@ const Navbar = () => {
           <a href="https://acesso.mindmed.online" onClick={() => setMobileOpen(false)} className="block mt-3 text-center text-sm font-medium text-foreground border border-border rounded-full px-4 py-2.5">
             Entrar
           </a>
-          <a href="#planos" onClick={() => setMobileOpen(false)} className="block mt-2 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5">
+          <a href="#planos" onClick={(e) => { setMobileOpen(false); trackLead(); }} className="block mt-2 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5">
             Começar agora
           </a>
         </div>
