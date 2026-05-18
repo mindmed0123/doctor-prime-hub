@@ -1,5 +1,6 @@
 import { Clock, DollarSign, TrendingUp } from "lucide-react";
 import FadeIn from "./FadeIn";
+import { trackLead } from "@/lib/fbq";
 
 const stats = [
   { icon: Clock, value: "1h", label: "perdida por dia com burocracia" },
