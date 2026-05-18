@@ -38,7 +38,7 @@ const Navbar = () => {
           <a href="https://acesso.mindmed.online" className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors px-4 py-2.5">
             Entrar
           </a>
-          <a href="#planos" className="inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
+          <a href="#planos" onClick={trackLead} className="inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
             Começar agora
           </a>
         </div>
