@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import { trackLead } from "@/lib/fbq";
 
 const FinalCTASection = () => (
   <section className="py-12 md:py-24">
