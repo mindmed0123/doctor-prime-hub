@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { trackLead } from "@/lib/fbq";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
