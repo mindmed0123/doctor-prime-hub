@@ -84,7 +84,7 @@ const PricingSection = () => {
               Escolha o plano ideal para sua operação.
             </h2>
             <p className="mt-3 md:mt-4 text-xs md:text-base text-muted-foreground">
-              Checkout recorrente via Stripe, com cobrança mensal e entrada imediata.
+              14 dias grátis, sem cartão. Assine só se amar o produto.
             </p>
           </div>
         </FadeIn>
@@ -112,9 +112,13 @@ const PricingSection = () => {
                       </p>
                       <h3 className="mt-2 md:mt-3 text-xl md:text-2xl font-bold text-foreground">{plan.title}</h3>
                     </div>
-                    <span className="inline-flex rounded-full bg-primary-light px-2.5 md:px-3 py-1 text-[10px] md:text-xs font-semibold text-primary whitespace-nowrap">
-                      {plan.badge}
+                    <span className="inline-flex flex-col items-end rounded-2xl bg-primary-light px-2.5 md:px-3 py-1 text-[10px] md:text-xs font-semibold text-primary whitespace-nowrap leading-tight">
+                      <span>{plan.badge}</span>
+                      {plan.key === "starter" && (
+                        <span className="text-[9px] md:text-[10px] font-medium opacity-80">Sem cartão necessário</span>
+                      )}
                     </span>
+
                   </div>
 
                   <p className="mt-3 md:mt-5 text-xs md:text-sm leading-relaxed text-muted-foreground">{plan.summary}</p>
@@ -174,7 +178,7 @@ const PricingSection = () => {
                   </button>
 
                   <p className="mt-2 md:mt-3 text-center text-[10px] md:text-xs text-muted-foreground">
-                    Sem fidelidade. Cancelamento pelo portal do cliente.
+                    Sem cartão de crédito. Cancele quando quiser.
                   </p>
                 </article>
               </FadeIn>

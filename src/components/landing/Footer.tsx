@@ -42,7 +42,7 @@ const Footer = () => (
             Pronto para transformar minutos digitados em minutos de cuidado?
           </h2>
           <a href="#planos" className="inline-flex items-center text-xs md:text-sm font-semibold text-primary bg-background hover:bg-background/90 rounded-full px-5 md:px-6 py-2.5 md:py-3 transition-colors">
-            Iniciar teste gratuito
+            Iniciar teste gratuito — sem cartão
           </a>
         </div>
       </div>

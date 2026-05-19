@@ -10,11 +10,11 @@ const corsHeaders = {
 const STRIPE_PLANS = {
   starter: {
     priceId: "price_1TUEjERpmClnFRZoJeY6zNWv",
-    trialDays: 7,
+    trialDays: 14,
   },
   pro: {
     priceId: "price_1TGigCRpmClnFRZo9mrdRDrd",
-    trialDays: 7,
+    trialDays: 14,
   },
 } as const;
 
@@ -76,6 +76,9 @@ serve(async (req) => {
     const subscriptionData = selectedPlan.trialDays
       ? {
           trial_period_days: selectedPlan.trialDays,
+          trial_settings: {
+            end_behavior: { missing_payment_method: "cancel" as const },
+          },
           metadata: { app: "mindmed", plan },
         }
       : {
@@ -87,6 +90,7 @@ serve(async (req) => {
       customer_email: customerId ? undefined : customerEmail,
       line_items: [{ price: selectedPlan.priceId, quantity: 1 }],
       mode: "subscription",
+      payment_method_collection: "if_required",
       allow_promotion_codes: true,
       success_url: `${origin}/?checkout=success&plan=${plan}`,
       cancel_url: `${origin}/?checkout=canceled&plan=${plan}`,
