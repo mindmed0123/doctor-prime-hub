@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-
+import { Menu, X, Loader2 } from "lucide-react";
+import { useCheckoutCTA } from "@/lib/useCheckoutCTA";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { loading, startCheckout } = useCheckoutCTA();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -38,9 +39,10 @@ const Navbar = () => {
           <a href="https://acesso.mindmed.online" className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors px-4 py-2.5">
             Entrar
           </a>
-          <a href="#planos" className="inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
+          <button onClick={() => startCheckout()} disabled={loading} className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors disabled:opacity-70">
+            {loading && <Loader2 className="h-4 w-4 animate-spin" />}
             Começar agora
-          </a>
+          </button>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -56,9 +58,9 @@ const Navbar = () => {
           <a href="https://acesso.mindmed.online" onClick={() => setMobileOpen(false)} className="block mt-3 text-center text-sm font-medium text-foreground border border-border rounded-full px-4 py-2.5">
             Entrar
           </a>
-          <a href="#planos" onClick={() => setMobileOpen(false)} className="block mt-2 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5">
+          <button onClick={() => { setMobileOpen(false); startCheckout(); }} disabled={loading} className="block w-full mt-2 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5 disabled:opacity-70">
             Começar agora
-          </a>
+          </button>
         </div>
       )}
     </nav>
