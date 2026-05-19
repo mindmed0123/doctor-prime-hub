@@ -10,11 +10,11 @@ const corsHeaders = {
 const STRIPE_PLANS = {
   starter: {
     priceId: "price_1TUEjERpmClnFRZoJeY6zNWv",
-    trialDays: 7,
+    trialDays: 14,
   },
   pro: {
     priceId: "price_1TGigCRpmClnFRZo9mrdRDrd",
-    trialDays: 7,
+    trialDays: 14,
   },
 } as const;
 
