@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import FadeIn from "./FadeIn";
 import dashboardPreview from "@/assets/dashboard-preview.png";
-import { Heart, Zap } from "lucide-react";
-import { trackLead } from "@/lib/fbq";
+import { Heart, Zap, Loader2 } from "lucide-react";
+import { useCheckoutCTA } from "@/lib/useCheckoutCTA";
 
 const phrases = [
   "em segundos.",
@@ -14,6 +14,7 @@ const HeroSection = () => {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const { loading, startCheckout } = useCheckoutCTA();
 
   useEffect(() => {
     const current = phrases[phraseIndex];
@@ -74,9 +75,10 @@ const HeroSection = () => {
         {/* CTA */}
         <FadeIn delay={0.15}>
           <div className="mt-6 md:mt-8">
-            <a href="#planos" onClick={trackLead} className="inline-flex items-center text-sm md:text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-6 md:px-8 py-3 md:py-3.5 transition-colors shadow-lg shadow-primary/25">
+            <button onClick={() => startCheckout()} disabled={loading} className="inline-flex items-center gap-2 text-sm md:text-[15px] font-semibold text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-6 md:px-8 py-3 md:py-3.5 transition-colors shadow-lg shadow-primary/25 disabled:opacity-70">
+              {loading && <Loader2 className="h-4 w-4 animate-spin" />}
               Gerar meu primeiro laudo
-            </a>
+            </button>
           </div>
         </FadeIn>
 
