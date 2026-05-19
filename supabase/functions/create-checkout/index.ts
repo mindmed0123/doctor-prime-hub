@@ -92,19 +92,6 @@ serve(async (req) => {
       mode: "subscription",
       payment_method_collection: "if_required",
       allow_promotion_codes: true,
-      billing_address_collection: "required",
-      custom_fields: [
-        {
-          key: "first_name",
-          label: { type: "custom", custom: "Nome" },
-          type: "text",
-        },
-        {
-          key: "last_name",
-          label: { type: "custom", custom: "Sobrenome" },
-          type: "text",
-        },
-      ],
       success_url: `https://acesso.mindmed.online`,
       cancel_url: `${origin}/?checkout=canceled&plan=${plan}`,
       metadata: {
