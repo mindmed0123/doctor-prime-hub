@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { trackLead } from "@/lib/fbq";
+
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,7 +38,7 @@ const Navbar = () => {
           <a href="https://acesso.mindmed.online" className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors px-4 py-2.5">
             Entrar
           </a>
-          <a href="#planos" onClick={trackLead} className="inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
+          <a href="#planos" className="inline-flex items-center text-sm font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-full px-5 py-2.5 transition-colors">
             Começar agora
           </a>
         </div>
@@ -56,7 +56,7 @@ const Navbar = () => {
           <a href="https://acesso.mindmed.online" onClick={() => setMobileOpen(false)} className="block mt-3 text-center text-sm font-medium text-foreground border border-border rounded-full px-4 py-2.5">
             Entrar
           </a>
-          <a href="#planos" onClick={(e) => { setMobileOpen(false); trackLead(); }} className="block mt-2 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5">
+          <a href="#planos" onClick={() => setMobileOpen(false)} className="block mt-2 text-center text-sm font-medium text-primary-foreground bg-primary rounded-full px-4 py-2.5">
             Começar agora
           </a>
         </div>
