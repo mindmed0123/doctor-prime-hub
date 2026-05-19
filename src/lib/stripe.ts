@@ -6,7 +6,7 @@ export const STRIPE_PLANS = {
     productId: "prod_UTB5ckEKQVGkUL",
     name: "MindMed Starter",
     monthlyPriceInCents: 14900,
-    trialDays: 7,
+    trialDays: 14,
   },
   pro: {
     priceId: "price_1TGigCRpmClnFRZo9mrdRDrd",
