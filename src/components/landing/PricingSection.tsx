@@ -25,7 +25,7 @@ const plans: Array<{
 }> = [
   {
     key: "starter",
-    badge: "7 dias grátis",
+    badge: "14 dias grátis",
     title: "MindMed Starter",
     subtitle: "Operação individual",
     summary: "Economize tempo em cada consulta com transcrição e laudos automáticos.",
