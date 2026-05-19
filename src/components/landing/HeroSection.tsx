@@ -83,7 +83,7 @@ const HeroSection = () => {
         {/* Trust row */}
         <FadeIn delay={0.2}>
           <div className="mt-5 md:mt-6 flex flex-wrap justify-center gap-4 md:gap-6 text-[11px] md:text-[13px] text-muted-foreground">
-            {["Fácil de começar", "Teste sem compromisso", "Proteção total dos dados"].map((t) => (
+            {["Fácil de começar", "Teste sem compromisso", "Proteção total dos dados", "🏥 Parceiro oficial SBACVSP"].map((t) => (
               <span key={t} className="flex items-center gap-1.5 md:gap-2">
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="text-primary"><path d="M3 7L6 10L11 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 {t}
