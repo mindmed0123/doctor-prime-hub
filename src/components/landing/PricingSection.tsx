@@ -178,7 +178,7 @@ const PricingSection = () => {
                   </button>
 
                   <p className="mt-2 md:mt-3 text-center text-[10px] md:text-xs text-muted-foreground">
-                    Sem fidelidade. Cancelamento pelo portal do cliente.
+                    Sem cartão de crédito. Cancele quando quiser.
                   </p>
                 </article>
               </FadeIn>
