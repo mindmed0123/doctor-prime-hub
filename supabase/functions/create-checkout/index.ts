@@ -92,7 +92,7 @@ serve(async (req) => {
       mode: "subscription",
       payment_method_collection: "if_required",
       allow_promotion_codes: true,
-      success_url: `${origin}/?checkout=success&plan=${plan}`,
+      success_url: `https://acesso.mindmed.online`,
       cancel_url: `${origin}/?checkout=canceled&plan=${plan}`,
       metadata: {
         app: "mindmed",
