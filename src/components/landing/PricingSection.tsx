@@ -25,12 +25,12 @@ const plans: Array<{
 }> = [
   {
     key: "starter",
-    badge: "7 dias grátis",
+    badge: "14 dias grátis",
     title: "MindMed Starter",
     subtitle: "Operação individual",
     summary: "Economize tempo em cada consulta com transcrição e laudos automáticos.",
     cta: "Começar agora",
-    perConsultation: "Menos de R$5/consulta",
+    perConsultation: "Menos de R$5/consulta — para até 30 consultas/mês",
     timeSaved: "Economize até 40h/mês",
     perks: [
       "Transcrição automática da consulta",
@@ -46,7 +46,7 @@ const plans: Array<{
     subtitle: "Clínicas e alta demanda",
     summary: "Automação completa para quem precisa de velocidade, precisão e escala.",
     cta: "Testar agora",
-    perConsultation: "Menos de R$15/consulta",
+    perConsultation: "Menos de R$10/consulta",
     timeSaved: "Economize até 60h/mês",
     perks: [
       "Tudo do Starter incluído",
