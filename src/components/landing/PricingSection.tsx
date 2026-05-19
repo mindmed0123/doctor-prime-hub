@@ -46,7 +46,7 @@ const plans: Array<{
     subtitle: "Clínicas e alta demanda",
     summary: "Automação completa para quem precisa de velocidade, precisão e escala.",
     cta: "Testar agora",
-    perConsultation: "Menos de R$15/consulta",
+    perConsultation: "Menos de R$10/consulta",
     timeSaved: "Economize até 60h/mês",
     perks: [
       "Tudo do Starter incluído",
