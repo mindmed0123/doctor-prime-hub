@@ -84,7 +84,7 @@ const PricingSection = () => {
               Escolha o plano ideal para sua operação.
             </h2>
             <p className="mt-3 md:mt-4 text-xs md:text-base text-muted-foreground">
-              Checkout recorrente via Stripe, com cobrança mensal e entrada imediata.
+              14 dias grátis, sem cartão. Assine só se amar o produto.
             </p>
           </div>
         </FadeIn>
